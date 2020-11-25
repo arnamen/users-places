@@ -14,7 +14,7 @@ const UserPlaces = ( props ) => {
   useEffect(() => {
     (async () => {
       try {
-          const responseData = await sendRequest('http://127.0.0.1:5000/api/places/user/' + userId);
+          const responseData = await sendRequest('http://80.78.240.76:5000/api/places/user/' + userId);
           setPlaces(responseData.places);
       } catch (error) {
         //console.log(error)

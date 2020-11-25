@@ -69,7 +69,7 @@ const Auth = () => {
 
     if (isLoginMode) {
        try {
-          const responseData = await sendRequest('http://127.0.0.1:5000/api/users/login', 'POST', JSON.stringify({
+          const responseData = await sendRequest('http://80.78.240.76:5000/api/users/login', 'POST', JSON.stringify({
             email: formState.inputs.email.value,
             password: formState.inputs.password.value
           }), {
@@ -86,7 +86,7 @@ const Auth = () => {
         formData.append('name', formState.inputs.name.value)
         formData.append('password', formState.inputs.password.value)
         formData.append('image', formState.inputs.image.value)
-        const responseData = await sendRequest('http://127.0.0.1:5000/api/users/signup', 'POST', formData)
+        const responseData = await sendRequest('http://80.78.240.76:5000/api/users/signup', 'POST', formData)
           auth.login(responseData.user.userId, responseData.user.token);
       } catch (error) {
         //console.log(error)

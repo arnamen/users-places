@@ -33,7 +33,7 @@ const PlaceItem = props => {
   const confirmDeleteHandler = async () => {
     setShowConfirmModal(false);
     try {
-      await sendRequest('http://127.0.0.1:5000/api/places/' + props.id,'DELETE', null, {authorization: 'Bearer ' + auth.token});
+      await sendRequest('http://80.78.240.76:5000/api/places/' + props.id,'DELETE', null, {authorization: 'Bearer ' + auth.token});
       props.onDelete(props.id);
       history.push(`/${auth.userId}/places`)
     } catch (error) {
@@ -81,7 +81,7 @@ const PlaceItem = props => {
       <li className="place-item">
         <Card className="place-item__content">
           <div className="place-item__image">
-            <img src={'http://127.0.0.1:5000/' + props.image} alt={props.title} />
+            <img src={'http://80.78.240.76:5000/' + props.image} alt={props.title} />
           </div>
           <div className="place-item__info">
             <h2>{props.title}</h2>

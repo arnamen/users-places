@@ -40,7 +40,7 @@ const UpdatePlace = () => {
   useEffect(() => {
     (async () => {
       try {
-          const responseData = await sendRequest('http://127.0.0.1:5000/api/places/' + placeId);
+          const responseData = await sendRequest('http://80.78.240.76:5000/api/places/' + placeId);
           setLoadedPlace(responseData.place);
           setFormData(
             {
@@ -68,7 +68,7 @@ const UpdatePlace = () => {
   const placeUpdateSubmitHandler = async event => {
     event.preventDefault();
     try {
-      await sendRequest(`http://127.0.0.1:5000/api/places/${placeId}`, 'PATCH', JSON.stringify({
+      await sendRequest(`http://80.78.240.76:5000/api/places/${placeId}`, 'PATCH', JSON.stringify({
       title: formState.inputs.title.value,
       description: formState.inputs.description.value
     }), {'Content-Type': 'application/json', authorization: 'Bearer ' + auth.token})

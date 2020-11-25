@@ -11,7 +11,7 @@ const Users = () => {
   useEffect(() => {
     const request = async () => {
       try {
-        const response = await sendRequest('http://127.0.0.1:5000/api/users/');
+        const response = await sendRequest('http://80.78.240.76:5000/api/users/');
         setLoadedUsers(response);
       } catch (error) {
         //console.log(error)
